@@ -22,11 +22,10 @@ class Driver(Document):
     if TYPE_CHECKING:
         from frappe.types import DF
 
-        email: DF.Data
-        driver_name: DF.Data
-        phone_number: DF.Data
-        status: DF.Data
-
+        driver_name: DF.Data | None
+        email: DF.Data | None
+        phone_number: DF.Data | None
+        status: DF.Literal["Available", "Busy"]
     # end: auto-generated types
 
     _DOCTYPE_NAME = "Driver"
